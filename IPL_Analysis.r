@@ -311,4 +311,28 @@ if(!is.na(mid_vs_death) && mid_vs_death < 0.05) {
 }
 
 
+# DESCRIPTIVE STATISTICS SUMMARY
+
+cat("\nPowerplay (Overs 1-6):\n")
+cat("  Mean:", round(mean(powerplay_runs, na.rm=TRUE), 4), "\n")
+cat("  Median:", median(powerplay_runs, na.rm=TRUE), "\n")
+cat("  SD:", round(sd(powerplay_runs, na.rm=TRUE), 4), "\n")
+cat("  IQR:", IQR(powerplay_runs, na.rm=TRUE), "\n")
+cat("  n:", length(powerplay_runs), "\n")
+
+cat("\nMiddle Overs (Overs 7-15):\n")
+cat("  Mean:", round(mean(middle_runs, na.rm=TRUE), 4), "\n")
+cat("  Median:", median(middle_runs, na.rm=TRUE), "\n")
+cat("  SD:", round(sd(middle_runs, na.rm=TRUE), 4), "\n")
+cat("  IQR:", IQR(middle_runs, na.rm=TRUE), "\n")
+cat("  n:", length(middle_runs), "\n")
+
+cat("\nDeath Overs (Overs 16-20):\n")
+cat("  Mean:", round(mean(death_runs, na.rm=TRUE), 4), "\n")
+cat("  Median:", median(death_runs, na.rm=TRUE), "\n")
+cat("  SD:", round(sd(death_runs, na.rm=TRUE), 4), "\n")
+cat("  IQR:", IQR(death_runs, na.rm=TRUE), "\n")
+cat("  n:", length(death_runs), "\n")
+
+
 
