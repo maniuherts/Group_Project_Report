@@ -38,3 +38,27 @@ print(table(df$phase))
 powerplay_runs <- df$total_runs[df$phase == "Powerplay"]
 middle_runs <- df$total_runs[df$phase == "Middle"]
 death_runs <- df$total_runs[df$phase == "Death"]
+
+#STEP 3: DESCRIPTIVE STATISTICS
+
+cat("\n POWERPLAY (Overs 1-6):\n")
+cat("  Mean:              ", round(mean(powerplay_runs, na.rm=TRUE), 4), "\n")
+cat("  Median:            ", median(powerplay_runs, na.rm=TRUE), "\n")
+cat("  Standard Dev:      ", round(sd(powerplay_runs, na.rm=TRUE), 4), "\n")
+cat("  IQR:               ", IQR(powerplay_runs, na.rm=TRUE), "\n")
+cat("  Sample size (n):   ", length(powerplay_runs), "\n")
+
+cat("\n MIDDLE OVERS (Overs 7-15):\n")
+cat("  Mean:              ", round(mean(middle_runs, na.rm=TRUE), 4), "\n")
+cat("  Median:            ", median(middle_runs, na.rm=TRUE), "\n")
+cat("  Standard Dev:      ", round(sd(middle_runs, na.rm=TRUE), 4), "\n")
+cat("  IQR:               ", IQR(middle_runs, na.rm=TRUE), "\n")
+cat("  Sample size (n):   ", length(middle_runs), "\n")
+
+cat("\n DEATH OVERS (Overs 16-20):\n")
+cat("  Mean:              ", round(mean(death_runs, na.rm=TRUE), 4), "\n")
+cat("  Median:            ", median(death_runs, na.rm=TRUE), "\n")
+cat("  Standard Dev:      ", round(sd(death_runs, na.rm=TRUE), 4), "\n")
+cat("  IQR:               ", IQR(death_runs, na.rm=TRUE), "\n")
+cat("  Sample size (n):   ", length(death_runs), "\n")
+
