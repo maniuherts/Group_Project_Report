@@ -265,4 +265,50 @@ cat("\n\nP-VALUE MATRIX:\n")
 pvalue_matrix <- wilcox_result$p.value
 print(pvalue_matrix)
 
+#EXTRACTING AND INTERPRET P-VALUES 
+
+# Extracting p-values using direct matrix access
+
+pvalue_matrix <- wilcox_result$p.value
+
+cat("\nP-value matrix structure:\n")
+print(pvalue_matrix)
+
+# Extracting values 
+pp_vs_mid <- pvalue_matrix[1, 1]  # Powerplay vs. Middle
+pp_vs_death <- pvalue_matrix[1, 2]  # Powerplay vs. Death
+mid_vs_death <- pvalue_matrix[2, 2]  # Middle vs. Death
+
+
+cat("Comparison 1: Powerplay vs. Middle Overs\n")
+cat("  p-value =", format(pp_vs_mid, scientific=TRUE, digits=6), "\n")
+if(!is.na(pp_vs_mid) && pp_vs_mid < 0.05) {
+  cat("  Result: DIFFERENCE (p < 0.05)\n")
+} else if(is.na(pp_vs_mid)) {
+  cat("  Result:  Unable to extract p-value\n")
+} else {
+  cat("  Result:  NO difference (p ≥ 0.05)\n")
+}
+
+cat("\nComparison 2: Powerplay vs. Death Overs\n")
+cat("  p-value =", format(pp_vs_death, scientific=TRUE, digits=6), "\n")
+if(!is.na(pp_vs_death) && pp_vs_death < 0.05) {
+  cat("  Result:   DIFFERENCE (p < 0.05)\n")
+} else if(is.na(pp_vs_death)) {
+  cat("  Result:  Unable to extract p-value\n")
+} else {
+  cat("  Result:  NO difference (p ≥ 0.05)\n")
+}
+
+cat("\nComparison 3: Middle Overs vs. Death Overs\n")
+cat("  p-value =", format(mid_vs_death, scientific=TRUE, digits=6), "\n")
+if(!is.na(mid_vs_death) && mid_vs_death < 0.05) {
+  cat("  Result:   DIFFERENCE (p < 0.05)\n")
+} else if(is.na(mid_vs_death)) {
+  cat("  Result:  Unable to extract p-value\n")
+} else {
+  cat("  Result:  NO difference (p ≥ 0.05)\n")
+}
+
+
 
