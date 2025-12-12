@@ -242,4 +242,9 @@ cat("Created\n")
 save(df, powerplay_runs, middle_runs, death_runs, 
      file="prepared_data.RData")
 
+# Loading the prepared data
+load("prepared_data.RData")
 
+cat(" Data loaded successfully\n")
+cat("Total observations:", nrow(df), "\n")
+cat(" Phases:", paste(levels(df$phase), collapse=", "), "\n")
