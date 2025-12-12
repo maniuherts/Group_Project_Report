@@ -248,3 +248,21 @@ load("prepared_data.RData")
 cat(" Data loaded successfully\n")
 cat("Total observations:", nrow(df), "\n")
 cat(" Phases:", paste(levels(df$phase), collapse=", "), "\n")
+
+#PERFORMING pairwise.wilcox.test()
+
+cat("Executing: pairwise.wilcox.test(df$total_runs, df$phase, p.adjust.method='BH')\n\n")
+
+wilcox_result <- pairwise.wilcox.test(df$total_runs,     # Dependent variable
+                                      df$phase,           # Independent variable
+                                      p.adjust.method="BH") # Adjust for multiple comparisons
+
+# Displaying results
+cat("TEST RESULTS:\n")
+print(wilcox_result)
+
+cat("\n\nP-VALUE MATRIX:\n")
+pvalue_matrix <- wilcox_result$p.value
+print(pvalue_matrix)
+
+
