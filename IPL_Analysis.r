@@ -335,4 +335,26 @@ cat("  IQR:", IQR(death_runs, na.rm=TRUE), "\n")
 cat("  n:", length(death_runs), "\n")
 
 
+# CONCLUSION
+
+count <- sum(pp_vs_mid < 0.05, pp_vs_death < 0.05, mid_vs_death < 0.05, na.rm=TRUE)
+
+cat("\nNumber of pairs (p < 0.05):", count, "out of 3\n\n")
+
+if(count > 0) {
+  cat("CONCLUSION:\n")
+  cat("There ARE statistically differences in run distributions\n")
+  cat("across match phases (Powerplay, Middle, Death).\n\n")
+  cat("PRACTICAL MEANING:\n")
+  cat("Bowlers face different run-scoring patterns in different phases.\n")
+  cat("This has implications for bowling strategy and field placement\n")
+  cat("across the match progression in T20 cricket.\n")
+} else {
+  cat("CONCLUSION:\n")
+  cat("There are NO statistically differences in run distributions\n")
+  cat("across match phases (Powerplay, Middle, Death).\n\n")
+  cat("PRACTICAL MEANING:\n")
+  cat("Run-scoring patterns are similar across all phases.\n")
+  cat("Phase-specific bowling strategies may not be necessary.\n")
+}
 
