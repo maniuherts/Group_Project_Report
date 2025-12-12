@@ -13,3 +13,7 @@ library(readr)
 #STEP 1: DATA LOADING
 
 df <- read_csv("deliveries.csv")
+
+cat("Dataset loaded successfully\n")
+cat("Total rows (deliveries):", nrow(df), "\n")
+cat("Total columns:", ncol(df), "\n")
