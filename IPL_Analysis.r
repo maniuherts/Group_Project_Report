@@ -238,3 +238,8 @@ legend("topright",
 
 dev.off()
 cat("Created\n")
+
+save(df, powerplay_runs, middle_runs, death_runs, 
+     file="prepared_data.RData")
+
+
